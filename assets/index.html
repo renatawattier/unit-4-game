@@ -3,30 +3,25 @@
 <meta charset="utf-8">
 
 <head>
-    <title>Car Collector</title>
-    <link href="assets/css/reset.css" rel="stylesheet">
-    <link href="assets/css/style.css" rel="stylesheet">
+    <title>Roller Derby</title>
+    <!-- <link href="assets/css/reset.css" rel="stylesheet">
+    <link href="assets/css/style.css" rel="stylesheet"> -->
     <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
-
-    <link rel="icon" href="assets/images/pexels-photo-120049.jpeg" type="image/jpeg" sizes="16x16">
+<!-- 
+    <link rel="icon" href="assets/images/pexels-photo-120049.jpeg" type="image/jpeg" sizes="16x16"> -->
 </head>
 
 <header>
-    <h1>Car Collector</h1>
+    <h1>Roller Derby and Math are SuperFun</h1>
 </header>
 
 <body>
-    <p>You will be given a random number at the start of the game.</p>
-    <p>There are cars below. By clicking on a car you will add a specific amount of point to your total score.</p>
-    <p>You win the game by matching your total score to a random number, you lose the game if your total score goes above the
-        random number.</p>
-    <p>The value of each car is hidden from you until you click on it. </p>
-    <p>Each time when the game start, the game will change the values of each car.</p>
+    
 
-    <img id="car1" src="assets/images/audi-audi-car-automobile-168938.jpg" alt="picture of an Audi car" width="300px">
-    <img id="car2" src="assets/images/pexels-photo-1093230.jpeg" alt="picture of a mustang" width="300px">
-    <img id="car3" src="assets/images/pexels-photo-120049.jpeg" alt="picture of a mercedies" width="300px">
-    <img id="car4" src="assets/images/pexels-photo-210143.jpeg" alt="picture of a Ford GT" width="300px">
+    <img id="derby1" src= "images/derby1.jpg"   alt="derby photo cartoon" width="300px">
+    <img id="derby2" src= "images/derby2.jpg" alt="derby logo" width="300px">
+    <img id="derby3" src= "images/derby3.jpg" alt="2010 photo" width="300px">
+    <img id="derby4" src="images/derby4.jpg" alt="helsink" width="300px">
 
     <button type="button" id="random">Press to Start the Game</button>
 
@@ -43,7 +38,70 @@
 
 <div></div>
 
+<script>
+
+    var derby1 = 14
+    var derby2 = 10
+    var derby3 = 12
+    var derby4 = 11
+   
+    $(document).ready (function game() {
+        $("#random").click(function () {
+            var random = [Math.floor(Math.random() * 60) + 20];
+            console.log(random)
+            $("#display").text(random)
+        })
+
+        $("#derby1").click(function () {
+            var derby1 = 14
+            console.log(derby1)
+        })
+
+        $("#derby2").click(function () {
+            var derby2 = 10
+            console.log(derby2)
+        })
+        $("#derby3").click(function () {
+            var derby3 = 12
+            console.log(derby3)
+        })
+        $("#derby4").click(function () {
+            var derby4 = 11
+            console.log(derby4)
+
+        })
+        var userTotal = []
+
+        $('#derby1').on('click', function () {
+            userTotal = userTotal + derby1;
+            console.log("New userTotal= " + userTotal);
+            $('#total').text(userTotal);
+            //sets win/lose conditions
+        
+            })
+        })
+
+        var userTotal = []
+
+        $('#derby2').on('click', function () {
+            userTotal = userTotal + derby2;
+            console.log("New userTotal= " + userTotal);
+            $('#total').text(userTotal);
+          
+
+
+            })
+
+  
+     
+
+
+
+
+</script>
+</body>
 <footer>
-    &copy;2018
+Roller Derby
 
 </footer>
+</html>

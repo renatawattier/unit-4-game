@@ -42,17 +42,18 @@
 
 <script>
 
-    var derby1 = 5
+    var derby1 = 6
     var derby2 = 5
     var derby3 = 7
     var derby4 = 1
     var userTotal = 0
+    var random = [Math.floor(Math.random() * 60) + 20];
 
 
 
     $(document).ready(function game() {
         $("#random").click(function () {
-            var random = [Math.floor(Math.random() * 60) + 20];
+           
             console.log(random)
             $("#display").text(random)
         })
@@ -80,16 +81,16 @@
             userTotal = userTotal + derby1;
             console.log("New userTotal= " + userTotal);
             $('#total').text(userTotal);
-            //sets win/lose conditions
-
+          
         })
 
-
+    
         $('#derby2').click(function () {
             userTotal = userTotal + derby2;
             console.log("New userTotal= " + userTotal);
             $('#total').text(userTotal);
         })
+          
 
         $('#derby3').click(function () {
             userTotal = userTotal + derby3;
@@ -97,17 +98,24 @@
             $('#total').text(userTotal);
         })
 
-
+       
         $('#derby4').click(function () {
             userTotal = userTotal + derby4;
             console.log("New userTotal= " + userTotal);
             $('#total').text(userTotal);
         })
 
-        if (userTotal === random) {
-            Alert(YouWin)
-        }
 
+
+        if (userTotal == random) {
+            win++
+            Alert("You Win")
+        }
+        
+        else if (userTotal > random) {
+            loss++
+            alert("you did not win")
+        }
     })
 
      

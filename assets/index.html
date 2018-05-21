@@ -7,7 +7,7 @@
     <!-- <link href="assets/css/reset.css" rel="stylesheet">
     <link href="assets/css/style.css" rel="stylesheet"> -->
     <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
-<!-- 
+    <!-- 
     <link rel="icon" href="assets/images/pexels-photo-120049.jpeg" type="image/jpeg" sizes="16x16"> -->
 </head>
 
@@ -16,11 +16,11 @@
 </header>
 
 <body>
-    
 
-    <img id="derby1" src= "images/derby1.jpg"   alt="derby photo cartoon" width="300px">
-    <img id="derby2" src= "images/derby2.jpg" alt="derby logo" width="300px">
-    <img id="derby3" src= "images/derby3.jpg" alt="2010 photo" width="300px">
+
+    <img id="derby1" src="images/derby1.jpg" alt="derby photo cartoon" width="300px">
+    <img id="derby2" src="images/derby2.jpg" alt="derby logo" width="300px">
+    <img id="derby3" src="images/derby3.jpg" alt="2010 photo" width="300px">
     <img id="derby4" src="images/derby4.jpg" alt="helsink" width="300px">
 
     <button type="button" id="random">Press to Start the Game</button>
@@ -34,18 +34,23 @@
     <p>Losses</p>
 </section>
 
-<p>Your Total Score:<span id="total"> </span></p>
+<p>Your Total Score:
+    <span id="total"> </span>
+</p>
 
 <div></div>
 
 <script>
 
-    var derby1 = 14
-    var derby2 = 10
-    var derby3 = 12
-    var derby4 = 11
-   
-    $(document).ready (function game() {
+    var derby1 = 5
+    var derby2 = 5
+    var derby3 = 7
+    var derby4 = 1
+    var userTotal = 0
+
+
+
+    $(document).ready(function game() {
         $("#random").click(function () {
             var random = [Math.floor(Math.random() * 60) + 20];
             console.log(random)
@@ -70,29 +75,41 @@
             console.log(derby4)
 
         })
-        var userTotal = []
 
-        $('#derby1').on('click', function () {
+        $('#derby1').click(function () {
             userTotal = userTotal + derby1;
             console.log("New userTotal= " + userTotal);
             $('#total').text(userTotal);
             //sets win/lose conditions
-        
-            })
+
         })
 
-        var userTotal = []
 
-        $('#derby2').on('click', function () {
+        $('#derby2').click(function () {
             userTotal = userTotal + derby2;
             console.log("New userTotal= " + userTotal);
             $('#total').text(userTotal);
-          
+        })
+
+        $('#derby3').click(function () {
+            userTotal = userTotal + derby3;
+            console.log("New userTotal= " + userTotal);
+            $('#total').text(userTotal);
+        })
 
 
-            })
+        $('#derby4').click(function () {
+            userTotal = userTotal + derby4;
+            console.log("New userTotal= " + userTotal);
+            $('#total').text(userTotal);
+        })
 
-  
+        if (userTotal === random) {
+            Alert(YouWin)
+        }
+
+    })
+
      
 
 

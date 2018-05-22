@@ -2,7 +2,7 @@ body{
     background-image:
            url("../images/sakura.png");
     }
-    
+
     h1 {
         text-align: Center;
         padding: 30px;
@@ -12,14 +12,14 @@ body{
 
 
 #derby1 {
-    float: left;
+    
 
 }
 .clearfix {
-    overflow: auto;
+    
 }
 
 #derby2 {
-    float: left;
+    
 
 }

@@ -7,12 +7,11 @@
     <!-- <link href="assets/css/reset.css" rel="stylesheet">
     <link href="assets/css/style.css" rel="stylesheet"> -->
     <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
-    <!-- 
-    <link rel="icon" href="assets/images/pexels-photo-120049.jpeg" type="image/jpeg" sizes="16x16"> -->
+    
 </head>
 
 <header>
-    <h1>Roller Derby and Math are SuperFun</h1>
+    <h1>Roller Derby Guessing Game</h1>
 </header>
 
 <body>
@@ -30,8 +29,12 @@
 <div id="display"></div>
 
 <section>
-    <p>Wins:</p>
-    <p>Losses</p>
+    <p>Wins:
+        <span id="wins"> </span>
+    </p>
+    <p>Losses
+        <span id="losses"> </span>
+    </p>
 </section>
 
 <p>Your Total Score:
@@ -45,100 +48,24 @@
 
 <script>
 
-    var derby1 = 6
-    var derby2 = 5
-    var derby3 = 7
-    var derby4 = 1
-    var userTotal = 0
-    var random = [Math.floor(Math.random() * 60) + 20];
-    var wins = 0
-    var losses = 0
+   
 
-
-
-    $(document).ready(function game() {
-        $("#random").click(function () {
-           
-            console.log(random)
-            $("#randomNumber").text(random)
-        })
-
-        $("#derby1").click(function () {
-            var derby1 = 6
-            console.log(derby1)
-        })
-
-        $("#derby2").click(function () {
-            var derby2 = 5
-            console.log(derby2)
-        })
-        $("#derby3").click(function () {
-            var derby3 = 7
-            console.log(derby3)
-        })
-        $("#derby4").click(function () {
-            var derby4 = 1
-            console.log(derby4)
-
-        })
-
-        function win() {
-
-            alert("You win!");
-            wins++;
-            $("#wins").text(wins);
-        }
-
-        function lose() {
-
-            alert("You lose!");
-            losses++;
-            $("#losses").text(losses);
-           
-        }
-
-        $('#derby1').click(function () {
-            userTotal = userTotal + derby1;
-            console.log("New userTotal= " + userTotal);
-            $('#total').text(userTotal);
-            if (userTotal == random) {
-                    win();
-                }
-                else if (userTotal > random) {
-                    lose();
-                }
-
-        })
-
+    $(document).ready(function(){
+        var wins = 0;
+        var losses = 0;
+        var userTotal = 0;
+        var derby1Val;
+        var derby2Val;
+        var derby3Val;
+        var derby4Val;
+        var random;
+        var gameStarted = false;
         
-        $('#derby2').click(function () {
-            userTotal = userTotal + derby2;
-            console.log("New userTotal= " + userTotal);
-            $('#total').text(userTotal);
-            if (userTotal == random) {
-                    win();
-                }
-                else if (userTotal > random) {
-                    lose();
-                }
-        })
-          
-
-        $('#derby3').click(function () {
-            userTotal = userTotal + derby3;
-            console.log("New userTotal= " + userTotal);
-            $('#total').text(userTotal);
-            if (userTotal == random) {
-                    win();
-                }
-                else if (userTotal > random) {
-                    lose();
-                }
-        })
-
-
-        $('#derby4').click(function () {
-                userTotal = userTotal + derby4;
+        $("#derby1").click(function () {
+            if (gameStarted == true) {
+                // var derby1 = 6
+                console.log(derby1Val);
+                userTotal = userTotal + derby1Val;
                 console.log("New userTotal= " + userTotal);
                 $('#total').text(userTotal);
                 if (userTotal == random) {
@@ -147,11 +74,94 @@
                 else if (userTotal > random) {
                     lose();
                 }
-            })
+            }
+        })
 
+        $("#derby2").click(function () {
+            // var derby2 = 5
+            if (gameStarted == true) {
+                console.log(derby2Val);
+                userTotal = userTotal + derby2Val;
+                console.log("New userTotal= " + userTotal);
+                $('#total').text(userTotal);
+                 if (userTotal == random) {
+                      win();
+                 }
+                 else if (userTotal > random) {
+                     lose();
+             } }
+        })    
 
+        $("#derby3").click(function () {
+            // var derby3 = 7
+            if (gameStarted == true) {
+                 console.log(derby3Val);
+                 userTotal = userTotal + derby3Val;
+                 console.log("New userTotal= " + userTotal);
+                $('#total').text(userTotal);
+                if (userTotal == random) {
+                     win();
+                 }
+                else if (userTotal > random) {
+                     lose();
+                 }
+            }
+                    })
 
-     
+        $("#derby4").click(function () {
+            // var derby4 = 1
+            if (gameStarted == true) {
+                 console.log(derby4Val);
+                 userTotal = userTotal + derby4Val;
+                 console.log("New userTotal= " + userTotal);
+                 $('#total').text(userTotal);
+                 if (userTotal == random) {
+                    win();
+                 }
+                else if (userTotal > random) {
+                    lose();
+                }
+            }
+        })
+
+        function win() {
+
+            alert("You win!");
+            wins++;
+            $("#wins").text(wins);
+            game();
+            userTotal = 0;
+        }
+
+        function lose() {
+
+            alert("You lose!");
+            losses++;
+            $("#losses").text(losses);
+            game();
+            userTotal = 0;
+           
+        }
+
+        function game() {
+            gameStarted = true;
+            derby1Val = 6;
+            derby2Val = 5;
+            derby3Val = 7;
+            derby4Val = 1;
+            random = [Math.floor(Math.random() * 60) + 20];
+            console.log(random);
+            $("#randomNumber").text(random);
+        
+        }
+        
+        $("#random").click(function () {
+            userTotal = 0;
+            game();
+        
+        })
+
+               
     })
 
      

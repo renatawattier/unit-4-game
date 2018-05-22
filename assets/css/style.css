@@ -1,0 +1,25 @@
+body{
+    background-image:
+           url("../images/sakura.png");
+    }
+    
+    h1 {
+        text-align: Center;
+        padding: 30px;
+        font-size: 24px;
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    }      
+
+
+#derby1 {
+    float: left;
+
+}
+.clearfix {
+    overflow: auto;
+}
+
+#derby2 {
+    float: left;
+
+}

@@ -4,18 +4,21 @@
 
 <head>
     <title>Roller Derby</title>
-    <!-- <link href="assets/css/reset.css" rel="stylesheet">
-    <link href="assets/css/style.css" rel="stylesheet"> -->
-    <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
-    
+   <link rel="stylesheet" type="text/css" href="css/reset.css">
+   <link rel="stylesheet" type="text/css" href="css/style.css">
+   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+   <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script> 
+
 </head>
 
 <header>
-    <h1>Roller Derby Guessing Game</h1>
+    <div class="page-header">
+        <h1> Roller Derby Guessing Game </h1>
+      </div>
 </header>
-
+<hr>
 <body>
-
+   
 
     <img id="derby1" src="images/derby1.jpg" alt="derby photo cartoon" width="300px">
     <img id="derby2" src="images/derby2.jpg" alt="derby logo" width="300px">
@@ -47,9 +50,7 @@
 <div></div>
 
 <script>
-
    
-
     $(document).ready(function(){
         var wins = 0;
         var losses = 0;
@@ -76,7 +77,6 @@
                 }
             }
         })
-
         $("#derby2").click(function () {
             // var derby2 = 5
             if (gameStarted == true) {
@@ -91,7 +91,6 @@
                      lose();
              } }
         })    
-
         $("#derby3").click(function () {
             // var derby3 = 7
             if (gameStarted == true) {
@@ -107,7 +106,6 @@
                  }
             }
                     })
-
         $("#derby4").click(function () {
             // var derby4 = 1
             if (gameStarted == true) {
@@ -123,18 +121,14 @@
                 }
             }
         })
-
         function win() {
-
             alert("You win!");
             wins++;
             $("#wins").text(wins);
             game();
             userTotal = 0;
         }
-
         function lose() {
-
             alert("You lose!");
             losses++;
             $("#losses").text(losses);
@@ -142,7 +136,6 @@
             userTotal = 0;
            
         }
-
         function game() {
             gameStarted = true;
             derby1Val = 6;
@@ -160,15 +153,9 @@
             game();
         
         })
-
-               
+            
     })
-
      
-
-
-
-
 </script>
 </body>
 <footer>

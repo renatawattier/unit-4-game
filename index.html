@@ -4,8 +4,8 @@
 
 <head>
     <title>Roller Derby</title>
-   <link rel="stylesheet" type="text/css" href="css/reset.css">
-   <link rel="stylesheet" type="text/css" href="css/style.css">
+   <link rel="stylesheet" type="/text/css" href="assets/css/reset.css">
+   <link rel="stylesheet" type="text/css" href="assets/css/style.css">
    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
    <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script> 
 
@@ -21,11 +21,11 @@
    
     <div class="container">
         <div class="row">
-          <div class="col"><img id="derby1" src="images/derby1.jpg" alt="derby photo cartoon" width="300px" height="212"></div>
-          <div class="col"><img id="derby2" src="images/derby2.jpg" alt="derby logo" width="300px" height="212"></div>
+          <div class="col"><img id="derby1" src="assets/images/derby1.jpg" alt="derby photo cartoon" width="300px" height="212"></div>
+          <div class="col"><img id="derby2" src="assets/images/derby2.jpg" alt="derby logo" width="300px" height="212"></div>
           <div class="w-100"></div>
-          <div class="col"><img id="derby3" src="images/derby3.jpg" alt="2010 photo" width="300px" height="212"></div>
-          <div class="col"><img id="derby4" src="images/derby4.jpg" alt="helsink" width="300px" height="212"></div>
+          <div class="col"><img id="derby3" src="assets/images/derby3.jpg" alt="2010 photo" width="300px" height="212"></div>
+          <div class="col"><img id="derby4" src="assets/images/derby4.jpg" alt="helsink" width="300px" height="212"></div>
           
         </div>
       </div>
@@ -149,12 +149,17 @@
         }
         function game() {
             gameStarted = true;
-            derby1Val = 6;
-            derby2Val = 5;
-            derby3Val = 7;
-            derby4Val = 1;
+            derby1Val = [Math.floor(Math.random() * 10) + 1];
+            derby2Val = [Math.floor(Math.random() * 10) + 1];
+            derby3Val = [Math.floor(Math.random() * 10) + 1];
+            derby4Val = [Math.floor(Math.random() * 10) +1];
             random = [Math.floor(Math.random() * 60) + 20];
             console.log(random);
+            console.log(derby1Val)
+            console.log(derby2Val)
+            console.log(derby3Val)
+            console.log(derby4Val)
+
             $("#randomNumber").text(random);
         
         }
